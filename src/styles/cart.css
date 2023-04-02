@@ -1,0 +1,12 @@
+.cart-body {
+    background-color:;
+    height: 850px;
+}
+
+.cart-container {
+    width: 95%;
+    height: 200px;
+    border: black solid 1px;
+    margin: 20px auto 0;
+    
+}

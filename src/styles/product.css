@@ -1,10 +1,28 @@
+.header {
+    margin-top: 25px;
+}
+
 .product-container {
     width: 300px;
-    height: 250px;
+    height: 275px;
     border: 1px solid black;
-   margin-left: 50px;
+    margin-left: 75px;
+    margin-top: 50px;
+    vertical-align: top;
+    display: inline-block;
+   
 }
+
+/* .product-details {
+    margin-bottom: 30px, 30p;
+} */
 
 img {
     margin-top: 20px;
+}
+
+.product-price {
+    color: black;
+    width: 100%;
+    margin: 0 auto;
 }

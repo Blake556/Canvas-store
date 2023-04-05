@@ -6,13 +6,24 @@ import '../styles/product.css';
 
 function Product(props) {
 
-    const { product, onAdd } = props
+const { image, name, price } = props
+
+function handleClick() {
+    props.onAdd(props)
+}
+
+// function onAdd(event) {
+//     const click = event.target.parentNode
+//     console.log(click)
+// }
+ 
 
     return(
         <div className="product-container">
-            <img className="product-img" src={product.productImage}/>
-            <h3>{product.productName}</h3>
-            <button onClick={onAdd}>Add</button>
+            { <img className="product-details product-img" src={image}/> }
+            { <h2 className='product-details'>{name}</h2> }
+            { <h3 className='product-details product-price'>{price}</h3>}
+            <button onClick={handleClick} className='product-details'>Add</button>
         </div>
     )
 }

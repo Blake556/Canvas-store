@@ -1,18 +1,35 @@
+import { useState } from 'react';
 import '../styles/home.css';
-import Product from './ProductList'
+import Product from './Product'
 
 
 function Home(props) {
+    const { data } = props;
 
-    const { product, onAdd } = props
+    const [cartItems, setCartItems] = useState([])
+
+    function handleCartClick(item) {
+        cartItems.push(item)
+        setCartItems([...cartItems])
+        console.log(cartItems)
+    }
 
     return (
-    
         <div className='home-body'>
-            <h1>Home page</h1>
-            <Product key={product.id} product={product} onAdd={onAdd}/>
+            <h1 className='header'>Home page</h1>
+            { data.map(item => {
+                return (
+                    <Product 
+                        key={item.id}
+                        id={item.id}
+                        image={item.image}
+                        name={item.name}
+                        price={item.price}
+                        onAdd={handleCartClick}
+                    />
+                )
+            }) }
         </div>
-    
     );
 }
 

@@ -3,13 +3,17 @@ import '../styles/cart.css';
 //import johnWhick from './john-whick.png'
 
 function Cart(props) {
+  //const [cartItems, setCartItems] = useState()
+
   
-    const {cartItems} = props
+//   function fire(cartItems) {
+//     props.onAdd
+//   }
 
     return(
-       <div className='cart-body'>
-        { cartItems.length === 0 && <div>Cart is Empty</div> }
-       </div>
+        <div className='cart-body'>
+            {/* { cartItems.length === 0 && <div>Cart is Empty</div> } */}
+        </div>
 
         // <div className='cart-body'>
         //     <h1>Cart page</h1>
@@ -18,8 +22,8 @@ function Cart(props) {
         //        <span>John Whick canvas</span>
                
         //     </div>
-        // </div>
-        
+         //</div>
+
     )
 }
 

@@ -1,14 +1,14 @@
-import react from 'react'
+import {Link} from 'react-router-dom';
 import '../styles/navbar.css';
 
-function Navbar() {
+function NavBar() {
 
     return(
         <div className="nav-bar">
-            <a href="/Home"><p>Home</p></a>
-            <a href="/Cart"><p>Cart</p></a>
+            <Link to="/Home"> <p>Home</p> </Link>
+            <Link to="/Cart"><p>Cart</p> </Link>
         </div>
     )
 }
 
-export default Navbar
+export default NavBar

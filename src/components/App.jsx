@@ -4,10 +4,10 @@ import Footer from './Footer'
 import Home from './Home'
 import Cart from './Cart'
 import data from '../productData'
-import {BrowserRouter as Router, Route, Switch} from 'react-router-dom'
+import {BrowserRouter as Router, Route, Switch, Link} from 'react-router-dom'
 import { useState } from 'react';
 
-function App(props) {
+function App() {
 
   const [cartItems, setCartItems] = useState([])
 
@@ -15,15 +15,18 @@ function App(props) {
       
       cartItems.push(addItem)
       setCartItems([...cartItems])
-      console.log(cartItems)
+      //console.log(cartItems)
   }
 
+  //console.log(cartItems)
 
   
     return (
-    <Router>
+    <Router >
         <div className="App">
-            <Navbar />
+
+          <Navbar />
+
           <Switch>
 
             <Route exact path='/Home'>
@@ -31,12 +34,13 @@ function App(props) {
             </Route>
             
             <Route exact path='/Cart'>
-              <Cart added={handleCartClick} />
+              <Cart cartItems={cartItems} />
             </Route>
 
           </Switch>
             
             <Footer /> 
+
         </div>
       </Router>
     );

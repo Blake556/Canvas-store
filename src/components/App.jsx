@@ -8,45 +8,67 @@ import {BrowserRouter as Router, Route, Switch} from 'react-router-dom'
 import { useState } from 'react';
 
 function App(props) {
- const { image, name, price } = data
- 
-  const [shoppingCart, setCart] = useState([])
 
-  // function handleCartClick(cartItems) {
-  //   setCartItems(
-  //     console.log('hello')
-  //   )
-   
-  // }
+  const [cartItems, setCartItems] = useState([])
 
-  console.log(Home.props)
-
-  function cartaDta(ca) {
-
+  function handleCartClick(addItem) {
+      
+      cartItems.push(addItem)
+      setCartItems([...cartItems])
+      console.log(cartItems)
   }
 
 
+  
+    return (
+    <Router>
+        <div className="App">
+            <Navbar />
+          <Switch>
 
-  return (
-   <Router>
-      <div className="App">
-          <Navbar />
-        <Switch>
+            <Route exact path='/Home'>
+              <Home  data={data} onAdd={handleCartClick}/>
+            </Route>
+            
+            <Route exact path='/Cart'>
+              <Cart added={handleCartClick} />
+            </Route>
 
-          <Route exact path='/Home'>
-            <Home  data={data}/>
-          </Route>
-          
-          <Route exact path='/Cart'>
-           {/* <Cart sendCartItems={shoppingCart => setCart(shoppingCart)} /> */}
-          </Route>
-
-        </Switch>
-          
-          <Footer /> 
-      </div>
-    </Router>
-  );
+          </Switch>
+            
+            <Footer /> 
+        </div>
+      </Router>
+    );
 }
 
 export default App;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// function handleCartClick(addItem, product) {
+//   // const productExist = cartItems.find(item => item.id === product.id)
+//   // if(productExist) {
+
+//   //   setCartItems(cartItems.map(item => item.id === product.id ? {...productExist, quanity : productExist.quanity + 1}: item))
+//   // } else {
+    
+//   //   setCartItems([...cartItems, {...product, quanity: 1}])
+//   // }
+
+
+//    cartItems.push(addItem)
+//    setCartItems([...cartItems])
+//    console.log(cartItems)
+// }

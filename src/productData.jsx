@@ -1,7 +1,7 @@
 import johnWhick from './images/john-whick.png'
 import scarFace from './images/scarface.png'
 import rambo from './images/rambo.png'
-import elChapo from './images/elChapo.png'
+import FrankCastle from './images/frank-castle.png'
 
 
 const data = [
@@ -25,8 +25,8 @@ const data = [
     },
     {
         id: '3',
-        image: elChapo,
-        name: 'Elchapo Canvas', 
+        image: FrankCastle,
+        name: 'Frank Castle', 
         price: '$100'
     }
    

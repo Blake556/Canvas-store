@@ -4,33 +4,54 @@ import Product from './Product'
 
 
 function Home(props) {
+    // const [itemSelected, setSelected] = useState({
+    //     image: '',
+    //     name: '',
+    //     price: ''
+    // })
+
     const { data } = props;
 
-    const [cartItems, setCartItems] = useState([])
+    // function handleClick() {
+    //     //setSelected(console.log())
+    //     //props.onAdd(props)
+       
+        
+    //     //console.log()
+    //     //event.preventDefault()
+    // }
 
-    function handleCartClick(item) {
-        cartItems.push(item)
-        setCartItems([...cartItems])
-        console.log(cartItems)
+    function continueToPass(addItem) {
+        props.onAdd(addItem)
     }
 
     return (
         <div className='home-body'>
             <h1 className='header'>Home page</h1>
-            { data.map(item => {
+            { data.map((item, index) => {
                 return (
                     <Product 
-                        key={item.id}
-                        id={item.id}
+                        key={index}
+                        id={index}
                         image={item.image}
                         name={item.name}
                         price={item.price}
-                        onAdd={handleCartClick}
+                        continueToPass={continueToPass}
+                        //onAdd={handleClick}
                     />
                 )
             }) }
+
         </div>
     );
 }
 
 export default Home;
+
+
+
+// {
+//     image: 
+//     name: 
+//     price: 
+// }

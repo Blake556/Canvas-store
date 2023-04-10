@@ -3,7 +3,7 @@ import '../styles/cart.css';
 import johnWhick from './../images/john-whick.png'
 
 function Cart(props) {
-
+let cart = props.cartItems
   props.cartItems.map(item => {
     console.log(item)
   })
@@ -27,11 +27,14 @@ function Cart(props) {
        
       
           <div className='cart-body'>
-        {    props.cartItems.map(item => {
+        {    cart.map(item => {
+          return (
               <div key={item.id} className='cart-container' >
-                <img src={item.img}/>
-                <p>{item.name}</p>
+                <img src={item.image}/>
+                <h2>{item.name}</h2>
+                <h4>{item.price}</h4>
               </div>
+          )
         })}
            
                     {/* <div className='cart-container'>

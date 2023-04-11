@@ -1,3 +1,4 @@
+import React from 'react'
 import { useState } from 'react';
 import '../styles/cart.css';
 import johnWhick from './../images/john-whick.png'

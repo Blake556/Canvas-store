@@ -1,3 +1,4 @@
+import React from 'react'
 import '../styles/product.css';
 //import storeProducts from '../productData'
 import { useState } from 'react';
@@ -30,7 +31,7 @@ function Product(props) {
             { <img className="product-details product-img" src={image}/> }
             { <h2 className='product-details'>{name}</h2> }
             { <h3 className='product-details product-price'>{price}</h3>}
-            <button onClick={addToCart} className='product-details'>Add</button>
+            <button onClick={addToCart} className='btn btn-primary product-details'>Add</button>
         </div>
     )
 }

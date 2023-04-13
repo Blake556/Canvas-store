@@ -1,3 +1,7 @@
+.cart-header {
+    margin: 30px 0 60px 0;
+}
+
 .cart-body {
    
     height: 850px;
@@ -5,9 +9,41 @@
 }
 
 .cart-container {
-    width: 95%;
-    height: 200px;
-    border: black solid 1px;
-    margin: 20px auto 0;
+   
+    /* border: black solid 1px; */
+    margin: 40px auto 0;
+   
+}
+
+.cart-item-container {
+    border-bottom: 1px solid black;
     
+}
+
+.cart-item-img {
+  margin: 0;
+}
+
+.item-details-qunaity {
+    padding-bottom: 60px;
+    
+}
+
+.quanity-btn {
+    padding: 0 15px
+}
+
+.quanity-option{
+    width: 45px;
+    margin: 0 5px
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.item-price {
+    margin-bottom: 15px;
 }

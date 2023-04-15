@@ -31,7 +31,7 @@ function Product(props) {
             { <img className="product-details product-img" src={image}/> }
             { <h2 className='product-details'>{name}</h2> }
             { <h3 className='product-details product-price'>{price}</h3>}
-            <button onClick={addToCart} className='btn btn-primary product-details'>Add</button>
+            <button onClick={addToCart} className='btn btn-secondary product-details'>Add</button>
         </div>
     )
 }

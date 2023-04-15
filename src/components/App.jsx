@@ -19,6 +19,10 @@ function App() {
       //console.log(cartItems)
   }
 
+  function handleDelteItem(event) {
+    console.log(event)
+  }
+
   //console.log(cartItems)
 
   
@@ -35,7 +39,7 @@ function App() {
             </Route>
             
             <Route exact path='/Cart'>
-              <Cart cartItems={cartItems} />
+              <Cart cartItems={cartItems} handleDelteItem={handleDelteItem} />
             </Route>
 
           </Switch>

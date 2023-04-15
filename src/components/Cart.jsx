@@ -2,6 +2,7 @@ import React from "react";
 import { useState } from "react";
 import "../styles/cart.css";
 import johnWhick from "./../images/john-whick.png";
+import DeleteForeverIcon from '@mui/icons-material/DeleteForever';
 
 function Cart(props) {
   let cart = props.cartItems;
@@ -15,11 +16,15 @@ function Cart(props) {
   //cartItems()
   //console.log(props.cartItems)
 
+  function deleteItem() {
+    props.handleDelteItem()
+  }
+ 
   return (
     <div className="cart-body">
       <h1 className="cart-header">Checkout</h1>
       <div className="container col-6 cart-container">
-        {props.cartItems.length === 0 && <div> No items in cart</div>}
+        {cart.length === 0 && <div> No items in cart</div>}
 
         {cart.map((item) => {
           return (
@@ -46,12 +51,26 @@ function Cart(props) {
                   <button className="btn btn-success quanity-btn">+</button>
                 </div>
               </div>
-              <div className="col col-1 d-flex  align-items-end justify-content-end  ">
-                <h4 className="item-price">{item.price}</h4>
+          {/* The class i had for down below container prior to delet btn ( d-flex align-items-end justify-content-end ) */}
+              <div className="col col-1  ">
+                  <button onClick={deleteItem} className='delete-item '>{<DeleteForeverIcon className='delete-btn'/>}</button>
+                  <h4 className="item-price">{item.price}</h4>
               </div>
             </div>
           );
         })}
+        
+        {cart.length > 0 &&
+         <div className='finalize-container'>
+          <div className='total-container d-flex justify-content-between'>
+            <h3 className='float-right'>Total:</h3>
+            <h3 className=''>$200</h3>
+          </div>
+          <div className='d-flex justify-content-end'>
+            <button className='btn btn-warning purchase-button'>Purchase</button>
+          </div>
+        </div>  }
+        
 
         {/* <div className="row cart-item-container">
               <div className="col col-3 justify-content-start img-col">
@@ -79,17 +98,20 @@ function Cart(props) {
               <div className="col col-1 d-flex  align-items-end justify-content-end  ">
                 <h4 className="item-price">$100</h4>
               </div>
-            </div> */}
+            </div>
 
-        <div className='total-container d-flex justify-content-between'>
-          <h3 className='float-right'>Total:</h3>
-          <h3 className=''>$200</h3>
+        <div className='finalize-container'>
+          <div className='total-container d-flex justify-content-between'>
+            <h3 className='float-right'>Total:</h3>
+            <h3 className=''>$200</h3>
+          </div>
+          <div className='d-flex justify-content-end'>
+            <button className='btn btn-warning purchase-button'>Purchase</button>
+          </div>
         </div>
-        <div className='d-flex justify-content-end'>
-          <button className='btn btn-warning purchase-button'>Purchase</button>
-        </div>
+      */}
       </div>
-    </div>
+    </div> 
   );
 }
 

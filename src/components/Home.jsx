@@ -23,28 +23,30 @@ function Home(props) {
     // }
 
     function continueToPass(addItem) {
-        props.onAdd(addItem)
+        props.onAdd(addItem) 
     }
 
     return (
-        <div className='home-body'>
+        <div className='body'>
             <h1 className='header'>Home page</h1>
-            { data.map((item, index) => {
-                return (
-                    <Product 
-                        key={index}
-                        id={index}
-                        image={item.image}
-                        name={item.name}
-                        price={item.price}
-                        continueToPass={continueToPass}
-                        //onAdd={handleClick}
-                    />
-                )
-            }) }
-
+                <div className='main-content'>
+                { data.map((item, index) => {
+                    return (
+                        <Product 
+                            key={index}
+                            id={index}
+                            image={item.image}
+                            name={item.name}
+                            price={item.price}
+                            continueToPass={continueToPass}
+                            //onAdd={handleClick}
+                        />
+                    )
+                }) }
+                </div>
         </div>
     );
+    
 }
 
 export default Home;

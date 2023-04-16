@@ -8,7 +8,7 @@ import data from '../productData'
 import {BrowserRouter as Router, Route, Switch, Link} from 'react-router-dom'
 import { useState } from 'react';
 
-function App() {
+function App(props) {
 
   const [cartItems, setCartItems] = useState([])
 
@@ -19,8 +19,14 @@ function App() {
       //console.log(cartItems)
   }
 
-  function handleDelteItem(event) {
-    console.log(event)
+  function handleDelteItem(product) {
+    const productExist = cartItems.find(item => item.id === product.id )
+    if(productExist) {
+      setCartItems(
+        cartItems.filter(item => item.id !== product.id)
+      )
+    }
+    console.log(productExist)
   }
 
   //console.log(cartItems)
@@ -39,7 +45,7 @@ function App() {
             </Route>
             
             <Route exact path='/Cart'>
-              <Cart cartItems={cartItems} handleDelteItem={handleDelteItem} />
+              <Cart cartItems={cartItems} handleDelteItem={handleDelteItem}  />
             </Route>
 
           </Switch>

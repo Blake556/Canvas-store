@@ -43,26 +43,20 @@ input::-webkit-inner-spin-button {
 
 .delete-btn {
     transform: scale(1.5);
-}
-
-
-.delete-item {
     color: red;
     position: relative;
-    /* right: 10%; */
-    top: 5%
+    left: 40%; 
+    top: 5% 
 }
-
 
 .finalize-container {
     margin: 20px 0 125px 0;
 }
 
 .item-price {
-    /* margin-bottom: 15px; */
     position: relative;
-    top: 55%;
-    right: 10%;
+    top: 45%;
+    
 }
 
 .purchase-button {

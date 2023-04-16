@@ -33,8 +33,8 @@ function Home(props) {
                 { data.map((item, index) => {
                     return (
                         <Product 
-                            key={index}
-                            id={index}
+                            key={item.id}
+                            id={item.id}
                             image={item.image}
                             name={item.name}
                             price={item.price}

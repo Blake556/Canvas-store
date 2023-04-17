@@ -1,15 +1,16 @@
 import React from "react";
-//import { useState } from "react";
+import { useState } from "react";
 import "../styles/cart.css";
 import johnWhick from "./../images/john-whick.png";
 import DeleteForeverIcon from "@mui/icons-material/DeleteForever";
 
 function Cart(props) {
+
   let cart = props.cartItems;
 
-  props.cartItems.map((item) => {
-    // console.log(item);
-  });
+  // props.cartItems.map((item) => {
+  //   // console.log(item);
+  // });
 
 
   return (
@@ -35,12 +36,9 @@ function Cart(props) {
                 </div>
                 <div className="d-flex">
                   <button className="btn btn-danger quanity-btn">-</button>
-                  <input
-                    className="quanity-option form-control "
-                    maxlength="2"
-                    type="tel"
-                  ></input>
-                  <button className="btn btn-success quanity-btn">+</button>
+                  {/*  form-control when input was below */}
+                  <p className="quanity-option ">{item.qty} </p>
+                  <button onClick={() => props.onAdd(item)} className="btn btn-success quanity-btn">+</button>
                 </div>
               </div>
               {/* The class i had for down below container prior to delet btn ( d-flex align-items-end justify-content-end ) */}

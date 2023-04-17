@@ -8,16 +8,33 @@ import data from '../productData'
 import {BrowserRouter as Router, Route, Switch, Link} from 'react-router-dom'
 import { useState } from 'react';
 
-function App(props) {
+
+
+function App() {
 
   const [cartItems, setCartItems] = useState([])
 
   function handleCartClick(addItem) {
-      
-      cartItems.push(addItem)
-      setCartItems([...cartItems])
-      //console.log(cartItems)
+
+    cartItems.push(addItem)
+    setCartItems([...cartItems])
   }
+   //console.log(cartItems)
+
+
+  function handleQuanityChange(product) {
+    const productExist = cartItems.find(item => item.id === product.id )
+
+    if (productExist) {
+      setCartItems(cartItems.map(item =>
+         item.id === product.id ? {...productExist, qty: productExist.qty + 1 } : item))
+    } else {
+      setCartItems([...cartItems, {...product, qty: 1 }])
+    }
+    console.log('Hello?')
+  }
+
+
 
   function handleDelteItem(product) {
     const productExist = cartItems.find(item => item.id === product.id )
@@ -45,7 +62,12 @@ function App(props) {
             </Route>
             
             <Route exact path='/Cart'>
-              <Cart cartItems={cartItems} handleDelteItem={handleDelteItem}  />
+              <Cart 
+                cartItems={cartItems}  
+                onAdd={handleCartClick} 
+                onQtyChange={handleQuanityChange} 
+                handleDelteItem={handleDelteItem} 
+              />
             </Route>
 
           </Switch>
@@ -71,6 +93,19 @@ export default App;
 
 
 
+// function handleCartClick(addItem) {
+//   const productExist = cartItems.find(item => item.id === addItem.id )
+//   if (productExist) {
+//     // cartItems.push(addItem)
+//     // setCartItems([...cartItems])
+    
+//     setCartItems(cartItems.map(item =>
+//        item.id === addItem.id ? {...productExist, qty: productExist.qty + 1 } : item))
+//   } else {
+//     setCartItems([...cartItems, {...addItem, qty: 1 }])
+//   }
+//    //console.log(cartItems)
+// }
 
 // function handleCartClick(addItem, product) {
 //   // const productExist = cartItems.find(item => item.id === product.id)

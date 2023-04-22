@@ -8,13 +8,13 @@ const data = [
     {
         id: '0',
         image: johnWhick,
-        name: 'John Whick Canvas', 
+        name: 'John Wick Canvas', 
         price: '$100'
     },
     {
         id: '1',
         image: scarFace,
-        name: 'Scar Face Canvas', 
+        name: 'Scarface Canvas', 
         price: '$100'
     },
     {
@@ -26,7 +26,7 @@ const data = [
     {
         id: '3',
         image: FrankCastle,
-        name: 'Frank Castle', 
+        name: 'Frank Castle Canvas', 
         price: '$100'
     }
    

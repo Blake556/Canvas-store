@@ -9,13 +9,15 @@ function Product(props) {
 
     const { id, image, name, price } = props
 
+    
+
     const [addItem, setItem] = useState({
         id: id,
         key: id,
         image: image,
         name: name, 
-        price:price
-
+        price:price,
+        qty: 0
     })
 
     function addToCart() {

@@ -14,28 +14,29 @@ function App() {
 
   const [cartItems, setCartItems] = useState([])
 
+  // function handleCartClick(addItem) {
+  //   cartItems.push(addItem)
+  //   setCartItems([...cartItems])
+
+  // }
+
+
+
   function handleCartClick(addItem) {
-
-    cartItems.push(addItem)
-    setCartItems([...cartItems])
-  }
-   //console.log(cartItems)
-
-
-  function handleQuanityChange(product) {
-    const productExist = cartItems.find(item => item.id === product.id )
-
+    const productExist = cartItems.find(item => item.id === addItem.id )
     if (productExist) {
+     // cartItems.push(addItem)
+      
       setCartItems(cartItems.map(item =>
-         item.id === product.id ? {...productExist, qty: productExist.qty + 1 } : item))
+        item.id === addItem.id ? {...productExist, qty: productExist.qty + 1 } : item))
     } else {
-      setCartItems([...cartItems, {...product, qty: 1 }])
+      setCartItems([{...addItem, qty: 1 }])
     }
-    console.log('Hello?')
+    //console.log(cartItems)
   }
 
 
-
+  
   function handleDelteItem(product) {
     const productExist = cartItems.find(item => item.id === product.id )
     if(productExist) {
@@ -65,7 +66,7 @@ function App() {
               <Cart 
                 cartItems={cartItems}  
                 onAdd={handleCartClick} 
-                onQtyChange={handleQuanityChange} 
+                // onQtyChange={handleQuanityChange} 
                 handleDelteItem={handleDelteItem} 
               />
             </Route>

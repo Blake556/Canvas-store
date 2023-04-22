@@ -6,11 +6,29 @@ import DeleteForeverIcon from "@mui/icons-material/DeleteForever";
 
 function Cart(props) {
 
+  // const [quanity, setQuanity] = useState([])
+
   let cart = props.cartItems;
+
+  // function applyUpdate(item) {
+  //   setQuanity(props.onQtyChange(item))
+  // }
 
   // props.cartItems.map((item) => {
   //   // console.log(item);
   // });
+
+  // function handleQuanityChange(product) {
+  //   console.log(cart)
+  //   //const itemSelected = cart.map(item => item.id)
+  //   //console.log(itemSelected)
+  //   const productExist = cart.find(item => item.id === product.id )
+  //   // const updateQty = productExist.map(itemMatch => itemMatch.id === item.id )
+  //   // updateQty.qty += 1
+  //   console.log(productExist)
+  //   //setQuanity()
+   
+  // }
 
 
   return (
@@ -38,6 +56,7 @@ function Cart(props) {
                   <button className="btn btn-danger quanity-btn">-</button>
                   {/*  form-control when input was below */}
                   <p className="quanity-option ">{item.qty} </p>
+                  {/* {console.log(item.qty.toString())} */}
                   <button onClick={() => props.onAdd(item)} className="btn btn-success quanity-btn">+</button>
                 </div>
               </div>

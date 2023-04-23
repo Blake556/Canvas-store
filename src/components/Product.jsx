@@ -17,7 +17,7 @@ function Product(props) {
         image: image,
         name: name, 
         price:price,
-        qty: 0
+        qty: 1
     })
 
     function addToCart() {

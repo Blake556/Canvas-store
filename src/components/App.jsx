@@ -1,105 +1,103 @@
-import React from 'react'
-import '../styles/App.css';
-import Navbar from './NavBar'
-import Footer from './Footer'
-import Home from './Home'
-import Cart from './Cart'
-import data from '../productData'
-import {BrowserRouter as Router, Route, Switch, Link} from 'react-router-dom'
-import { useState } from 'react';
-
-
+import React from "react";
+import "../styles/App.css";
+import Navbar from "./NavBar";
+import Footer from "./Footer";
+import Home from "./Home";
+import Cart from "./Cart";
+import data from "../productData";
+import { BrowserRouter as Router, Route, Switch, Link } from "react-router-dom";
+import { useState } from "react";
 
 function App() {
-
-  const [cartItems, setCartItems] = useState([])
-
-  // function handleCartClick(addItem) {
-  //   cartItems.push(addItem)
-  //   setCartItems([...cartItems])
-
-  // }
-
-
+  const [cartItems, setCartItems] = useState([]);
 
   function handleCartClick(addItem) {
-    const productExist = cartItems.find(item => item.id === addItem.id )
-    if (productExist) {
-     // cartItems.push(addItem)
-      
-      setCartItems(cartItems.map(item =>
-        item.id === addItem.id ? {...productExist, qty: productExist.qty + 1 } : item))
-    } else {
-      setCartItems([{...addItem, qty: 1 }])
-    }
-    //console.log(cartItems)
+    cartItems.push(addItem);
+    setCartItems([...cartItems]);
   }
 
+  function handleIncrease(addItem) {
+    console.log(addItem);
+    const productExist = cartItems.find((item) => item.id === addItem.id);
+    console.log(productExist);
 
-  
-  function handleDelteItem(product) {
-    const productExist = cartItems.find(item => item.id === product.id )
-    if(productExist) {
+    if (productExist) {
       setCartItems(
-        cartItems.filter(item => item.id !== product.id)
-      )
+        cartItems.map((item) =>
+          item.id === addItem.id && productExist.qty < 10
+            ? { ...productExist, qty: productExist.qty + 1 }
+            : item
+        )
+      );
     }
-    console.log(productExist)
+  }
+
+  function handleDecrease(addItem) {
+    const productExist = cartItems.find((item) => item.id === addItem.id);
+    if (productExist) {
+      setCartItems(
+        cartItems.map((item) =>
+          item.id === addItem.id && productExist.qty > 0
+            ? { ...productExist, qty: productExist.qty - 1 }
+            : item
+        )
+      );
+    }
+  }
+
+  function handleDelteItem(product) {
+    const productExist = cartItems.find((item) => item.id === product.id);
+    if (productExist) {
+      setCartItems(cartItems.filter((item) => item.id !== product.id));
+    }
+    console.log(productExist);
+  }
+
+  function purchaseItemsBtn() {
+    setCartItems(cartItems.filter((item) => item.length));
+    setTimeout(() => {
+      alert("Order placed, Thank you!");
+    }, 500);
   }
 
   //console.log(cartItems)
 
-  
-    return (
-    <Router >
-        <div className="App">
+  return (
+    <Router>
+      <div className="App">
+        <Navbar />
 
-          <Navbar />
+        <Switch>
+          <Route exact path="/Home">
+            <Home data={data} onAdd={handleCartClick} />
+          </Route>
 
-          <Switch>
+          <Route exact path="/Cart">
+            <Cart
+              cartItems={cartItems}
+              handleDecrease={handleDecrease}
+              handleIncrease={handleIncrease}
 
-            <Route exact path='/Home'>
-              <Home  data={data} onAdd={handleCartClick}/>
-            </Route>
-            
-            <Route exact path='/Cart'>
-              <Cart 
-                cartItems={cartItems}  
-                onAdd={handleCartClick} 
-                // onQtyChange={handleQuanityChange} 
-                handleDelteItem={handleDelteItem} 
-              />
-            </Route>
+              handleDelteItem={handleDelteItem}
+              purchaseItemsBtn={purchaseItemsBtn}
+            />
+          </Route>
+        </Switch>
 
-          </Switch>
-            
-            <Footer /> 
-
-        </div>
-      </Router>
-    );
+        <Footer />
+      </div>
+    </Router>
+  );
 }
 
 export default App;
-
-
-
-
-
-
-
-
-
-
-
-
 
 // function handleCartClick(addItem) {
 //   const productExist = cartItems.find(item => item.id === addItem.id )
 //   if (productExist) {
 //     // cartItems.push(addItem)
 //     // setCartItems([...cartItems])
-    
+
 //     setCartItems(cartItems.map(item =>
 //        item.id === addItem.id ? {...productExist, qty: productExist.qty + 1 } : item))
 //   } else {
@@ -114,10 +112,9 @@ export default App;
 
 //   //   setCartItems(cartItems.map(item => item.id === product.id ? {...productExist, quanity : productExist.quanity + 1}: item))
 //   // } else {
-    
+
 //   //   setCartItems([...cartItems, {...product, quanity: 1}])
 //   // }
-
 
 //    cartItems.push(addItem)
 //    setCartItems([...cartItems])

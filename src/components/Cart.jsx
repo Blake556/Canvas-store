@@ -1,5 +1,5 @@
 import React from "react";
-import { useState } from "react";
+//import { useState } from "react";
 import "../styles/cart.css";
 import johnWhick from "./../images/john-whick.png";
 import DeleteForeverIcon from "@mui/icons-material/DeleteForever";
@@ -53,11 +53,11 @@ function Cart(props) {
                   <h6>Canvas</h6>
                 </div>
                 <div className="d-flex">
-                  <button className="btn btn-danger quanity-btn">-</button>
+                  <button onClick={() => props.handleDecrease(item)} className="btn btn-danger quanity-btn">-</button>
                   {/*  form-control when input was below */}
                   <p className="quanity-option ">{item.qty} </p>
                   {/* {console.log(item.qty.toString())} */}
-                  <button onClick={() => props.onAdd(item)} className="btn btn-success quanity-btn">+</button>
+                  <button onClick={() => props.handleIncrease(item)} className="btn btn-success quanity-btn">+</button>
                 </div>
               </div>
               {/* The class i had for down below container prior to delet btn ( d-flex align-items-end justify-content-end ) */}
@@ -79,7 +79,7 @@ function Cart(props) {
               <h3 className="">$200</h3>
             </div>
             <div className="d-flex justify-content-end">
-              <button className="btn btn-warning purchase-button">
+              <button onClick={() => props.purchaseItemsBtn()} className="btn btn-warning purchase-button">
                 Purchase
               </button>
             </div>

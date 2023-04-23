@@ -17,19 +17,31 @@ function App() {
   }
 
   function handleIncrease(addItem) {
-    console.log(addItem);
+    //console.log(addItem);
     const productExist = cartItems.find((item) => item.id === addItem.id);
-    console.log(productExist);
+    //let productPrice = productExist.qty  * productExist.price
+    //console.log(productExist);
 
     if (productExist) {
       setCartItems(
         cartItems.map((item) =>
           item.id === addItem.id && productExist.qty < 10
+
             ? { ...productExist, qty: productExist.qty + 1 }
-            : item
+            : item ,
+
+            console.log(productExist),
+            console.log(productExist.qty * productExist.price)
         )
+        
+
       );
+      
+      
+
     }
+    
+   
   }
 
   function handleDecrease(addItem) {
@@ -39,7 +51,7 @@ function App() {
         cartItems.map((item) =>
           item.id === addItem.id && productExist.qty > 0
             ? { ...productExist, qty: productExist.qty - 1 }
-            : item
+            : item, productExist.qty * productExist.price
         )
       );
     }
@@ -50,8 +62,25 @@ function App() {
     if (productExist) {
       setCartItems(cartItems.filter((item) => item.id !== product.id));
     }
-    console.log(productExist);
+    //console.log(productExist);
   }
+
+
+  // function updateTotal(addItem) {
+  //   const productExist = cartItems.find((item) => item.id === addItem.id)
+  //   console.log(typeof productExist.price)
+  //   console.log(productExist)
+    
+  //   setCartItems(
+  //     cartItems.map(item => item.id === addItem.id &&  productExist.qty * productExist.price)
+      
+  //   )
+  // }
+
+  function total() {
+    cartItems.map()
+  }
+
 
   function purchaseItemsBtn() {
     setCartItems(cartItems.filter((item) => item.length));
@@ -59,8 +88,6 @@ function App() {
       alert("Order placed, Thank you!");
     }, 500);
   }
-
-  //console.log(cartItems)
 
   return (
     <Router>
@@ -77,7 +104,6 @@ function App() {
               cartItems={cartItems}
               handleDecrease={handleDecrease}
               handleIncrease={handleIncrease}
-
               handleDelteItem={handleDelteItem}
               purchaseItemsBtn={purchaseItemsBtn}
             />

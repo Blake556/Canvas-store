@@ -66,7 +66,7 @@ function Cart(props) {
                   onClick={() => props.handleDelteItem(item)}
                   className="delete-btn"
                 />
-                <h4 className=" item-price">{item.price}</h4>
+                <h4 className=" item-price">{item.price * item.qty}</h4>
               </div>
             </div>
           );
@@ -76,6 +76,7 @@ function Cart(props) {
           <div className="finalize-container">
             <div className="total-container d-flex justify-content-between">
               <h3 className="float-right">Total:</h3>
+              {console.log(this.item)}
               <h3 className="">$200</h3>
             </div>
             <div className="d-flex justify-content-end">

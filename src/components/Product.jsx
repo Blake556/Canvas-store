@@ -16,7 +16,7 @@ function Product(props) {
         key: id,
         image: image,
         name: name, 
-        price:price,
+        price: price,
         qty: 1
     })
 
@@ -27,7 +27,7 @@ function Product(props) {
             key: id,
             image: image,
             name: name, 
-            price:price
+            price: price
         })
         //event.preventDefault()
         //console.log(addItem)

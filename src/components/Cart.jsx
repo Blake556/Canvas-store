@@ -7,8 +7,45 @@ import DeleteForeverIcon from "@mui/icons-material/DeleteForever";
 function Cart(props) {
 
   // const [quanity, setQuanity] = useState([])
-
   let cart = props.cartItems;
+  //console.log(cart)
+  let itemQuanityA =  cart.map(( p) => {
+    return  p.price
+  })
+
+  // let itemQuanityB =  cart.map(x => x.price)
+  // console.log(itemQuanityA, itemQuanityB)
+
+    // let total = itemQuanity.length && itemQuanity.reduce((accumulator, currentValue) =>  accumulator + currentValue)
+
+
+
+
+
+
+    let itemQuanity =  cart.map(x => x.qty) 
+
+    console.log(itemQuanity)
+    
+    let total = itemQuanity.length && itemQuanity.reduce((accumulator, currentValue) =>  accumulator + currentValue)
+
+   // let itemPrice = cart.map(x => x.qty) 
+
+    console.log(total)
+
+    let grandTotal = total * 100
+       
+    
+
+
+//console.log( total )
+
+  //console.log(itemQuanity)
+  //console.log(addQuanity)
+
+  // let total = cart.reduce((add, qty) => {
+  //   return 
+  // })
 
   // function applyUpdate(item) {
   //   setQuanity(props.onQtyChange(item))
@@ -30,7 +67,8 @@ function Cart(props) {
    
   // }
 
-
+ 
+  
   return (
     <div className="cart-body">
       <h1 className="cart-header">Checkout</h1>
@@ -66,7 +104,8 @@ function Cart(props) {
                   onClick={() => props.handleDelteItem(item)}
                   className="delete-btn"
                 />
-                <h4 className=" item-price">{item.price * item.qty}</h4>
+                
+                <h4 className=" item-price">{total = item.price * item.qty}</h4>
               </div>
             </div>
           );
@@ -76,8 +115,8 @@ function Cart(props) {
           <div className="finalize-container">
             <div className="total-container d-flex justify-content-between">
               <h3 className="float-right">Total:</h3>
-              {console.log(this.item)}
-              <h3 className="">$200</h3>
+             
+              <h3 className="">{'$' + grandTotal}</h3>
             </div>
             <div className="d-flex justify-content-end">
               <button onClick={() => props.purchaseItemsBtn()} className="btn btn-warning purchase-button">

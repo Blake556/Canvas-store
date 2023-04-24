@@ -30,8 +30,8 @@ function App() {
             ? { ...productExist, qty: productExist.qty + 1 }
             : item ,
 
-            console.log(productExist),
-            console.log(productExist.qty * productExist.price)
+            //console.log(productExist),
+            //console.log(productExist.qty * productExist.price)
         )
         
 

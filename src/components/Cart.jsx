@@ -18,7 +18,7 @@ function Cart(props) {
 
     // let total = itemQuanity.length && itemQuanity.reduce((accumulator, currentValue) =>  accumulator + currentValue)
 
-
+    
 
 
 
@@ -105,7 +105,7 @@ function Cart(props) {
                   className="delete-btn"
                 />
                 
-                <h4 className=" item-price">{total = item.price * item.qty}</h4>
+                <h4 className=" item-price">{total = '$' + item.price * item.qty}</h4>
               </div>
             </div>
           );

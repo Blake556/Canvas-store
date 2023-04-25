@@ -63,6 +63,6 @@ input::-webkit-inner-spin-button {
     margin-top: 50px;
 }
 
-p {
+p.quanity-option  {
    color: black;
 }

@@ -12,7 +12,14 @@ function App() {
   const [cartItems, setCartItems] = useState([]);
 
   function handleCartClick(addItem) {
-    cartItems.push(addItem);
+    const productExist = cartItems.find((item) => item.id === addItem.id);
+    console.log(productExist)
+
+    if(!cartItems.includes(productExist)) { 
+      cartItems.push(addItem) 
+    } else { 
+      alert('Item has already been added') 
+    }
     setCartItems([...cartItems]);
   }
 
@@ -24,7 +31,6 @@ function App() {
       setCartItems(
         cartItems.map((item) =>
           item.id === addItem.id && productExist.qty < 10
-
             ? { ...productExist, qty: productExist.qty + 1 }
             : item ,
 

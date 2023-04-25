@@ -6,68 +6,19 @@ import DeleteForeverIcon from "@mui/icons-material/DeleteForever";
 
 function Cart(props) {
 
-  // const [quanity, setQuanity] = useState([])
+  //const [totalPrice, setTotalPrice] = useState([])
+
   let cart = props.cartItems;
-  //console.log(cart)
-  let itemQuanityA =  cart.map(( p) => {
-    return  p.price
-  })
 
-  // let itemQuanityB =  cart.map(x => x.price)
-  // console.log(itemQuanityA, itemQuanityB)
+  let itemQuanity =  cart.map(x => x.qty) 
+  let total = itemQuanity.length && itemQuanity.reduce((accum, current) =>  accum + current)
 
-    // let total = itemQuanity.length && itemQuanity.reduce((accumulator, currentValue) =>  accumulator + currentValue)
+  //console.log(total)
+  //let grandTotal = total * 100
+      
+  let cartRowPrice = cart.map(g =>  g.qty * g.price)
+  let cartTotal = cartRowPrice.length && cartRowPrice.reduce((accum, current) => accum + current)
 
-    
-
-
-
-
-    let itemQuanity =  cart.map(x => x.qty) 
-
-    console.log(itemQuanity)
-    
-    let total = itemQuanity.length && itemQuanity.reduce((accumulator, currentValue) =>  accumulator + currentValue)
-
-   // let itemPrice = cart.map(x => x.qty) 
-
-    console.log(total)
-
-    let grandTotal = total * 100
-       
-    
-
-
-//console.log( total )
-
-  //console.log(itemQuanity)
-  //console.log(addQuanity)
-
-  // let total = cart.reduce((add, qty) => {
-  //   return 
-  // })
-
-  // function applyUpdate(item) {
-  //   setQuanity(props.onQtyChange(item))
-  // }
-
-  // props.cartItems.map((item) => {
-  //   // console.log(item);
-  // });
-
-  // function handleQuanityChange(product) {
-  //   console.log(cart)
-  //   //const itemSelected = cart.map(item => item.id)
-  //   //console.log(itemSelected)
-  //   const productExist = cart.find(item => item.id === product.id )
-  //   // const updateQty = productExist.map(itemMatch => itemMatch.id === item.id )
-  //   // updateQty.qty += 1
-  //   console.log(productExist)
-  //   //setQuanity()
-   
-  // }
-
- 
   
   return (
     <div className="cart-body">
@@ -116,7 +67,7 @@ function Cart(props) {
             <div className="total-container d-flex justify-content-between">
               <h3 className="float-right">Total:</h3>
              
-              <h3 className="">{'$' + grandTotal}</h3>
+              <h3 className="">{'$' + cartTotal}</h3>
             </div>
             <div className="d-flex justify-content-end">
               <button onClick={() => props.purchaseItemsBtn()} className="btn btn-warning purchase-button">
@@ -126,44 +77,6 @@ function Cart(props) {
           </div>
         )}
 
-        {/* <div className="row cart-item-container">
-              <div className="col col-3 justify-content-start img-col">
-                <img
-                  className="cart-item-img  d-flex justify-content-start"
-                  src={johnWhick}
-                  width="150px"
-                />
-              </div>
-              <div className="col col-8 item-details-qunaity">
-                <div className="d-flex align-items-start flex-column">
-                  <h4 className="">John Whick</h4>
-                  <h6>Canvas</h6>
-                </div>
-                <div className="d-flex">
-                  <button className="btn btn-danger quanity-btn">-</button>
-                  <input
-                    className="quanity-option form-control "
-                    maxlength="2"
-                    type="tel"
-                  ></input>
-                  <button className="btn btn-success quanity-btn">+</button>
-                </div>
-              </div>
-              <div className="col col-1 d-flex  align-items-end justify-content-end  ">
-                <h4 className="item-price">$100</h4>
-              </div>
-            </div>
-
-        <div className='finalize-container'>
-          <div className='total-container d-flex justify-content-between'>
-            <h3 className='float-right'>Total:</h3>
-            <h3 className=''>$200</h3>
-          </div>
-          <div className='d-flex justify-content-end'>
-            <button className='btn btn-warning purchase-button'>Purchase</button>
-          </div>
-        </div>
-      */}
       </div>
     </div>
   );

@@ -37,6 +37,7 @@ function Home(props) {
                             id={item.id}
                             image={item.image}
                             name={item.name}
+                            descrip={item.descrip}
                             price={item.price}
                             continueToPass={continueToPass}
                             //onAdd={handleClick}

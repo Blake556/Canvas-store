@@ -4,13 +4,14 @@ import "../styles/product.css";
 import { useState } from "react";
 
 function Product(props) {
-  const { id, image, name, price } = props;
+  const { id, image, name, descrip, price } = props;
 
   const [addItem, setItem] = useState({
     id: id,
     key: id,
     image: image,
     name: name,
+    descrip: descrip,
     price: price,
     qty: 1,
   });
@@ -22,6 +23,7 @@ function Product(props) {
       key: id,
       image: image,
       name: name,
+      descrip: descrip,
       price: price,
     });
     //event.preventDefault()
@@ -31,12 +33,15 @@ function Product(props) {
 
 
   return (
-    <div className="product-container">
-      {<img className="product-details product-img" src={image} />}
+    <div className="product-container animation">
+    <div className='product-img-container'>
+      {<img className="product-details product-img animation" src={image} />}
+    </div>
       {<h2 className="product-details">{name}</h2>}
+      {<h5 className='product-details product-description'>{descrip}</h5>}
       {<h3 className="product-details product-price">{'$' + price}</h3>}
-      <button onClick={addToCart} className="btn btn-secondary product-details">
-        Add
+      <button onClick={addToCart} className="btn btn-secondary product-details addBtn">
+        Buy
       </button>
     </div>
   );

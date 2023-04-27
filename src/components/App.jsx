@@ -13,27 +13,25 @@ function App() {
 
   function handleCartClick(addItem) {
     const productExist = cartItems.find((item) => item.id === addItem.id);
-    console.log(productExist)
+    console.log(productExist);
 
-    if(!cartItems.includes(productExist)) { 
-      cartItems.push(addItem) 
-    } else { 
-      alert('Item has already been added') 
+    if (!cartItems.includes(productExist)) {
+      cartItems.push(addItem);
+    } else {
+      alert("Item has already been added");
     }
     setCartItems([...cartItems]);
   }
 
   function handleIncrease(addItem) {
-  
     const productExist = cartItems.find((item) => item.id === addItem.id);
-    
+
     if (productExist) {
       setCartItems(
         cartItems.map((item) =>
-          item.id === addItem.id && productExist.qty < 10
+          item.id === addItem.id && productExist.qty < 9
             ? { ...productExist, qty: productExist.qty + 1 }
-            : item ,
-
+            : item
         )
       );
     }
@@ -43,10 +41,12 @@ function App() {
     const productExist = cartItems.find((item) => item.id === addItem.id);
     if (productExist) {
       setCartItems(
-        cartItems.map((item) =>
-          item.id === addItem.id && productExist.qty > 0
-            ? { ...productExist, qty: productExist.qty - 1 }
-            : item, productExist.qty * productExist.price
+        cartItems.map(
+          (item) =>
+            item.id === addItem.id && productExist.qty > 1
+              ? { ...productExist, qty: productExist.qty - 1 }
+              : item,
+          productExist.qty * productExist.price
         )
       );
     }
@@ -63,7 +63,7 @@ function App() {
     setCartItems(cartItems.filter((item) => item.length));
     setTimeout(() => {
       alert("Order placed, Thank you!");
-    }, 500);
+    }, 200);
   }
 
   return (

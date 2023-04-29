@@ -37,7 +37,7 @@ function Product(props) {
     <div className='product-img-container'>
       {<img className="product-details product-img animation" src={image} />}
     </div>
-      {<h2 className="product-details">{name}</h2>}
+      {<h3 className="product-details product-name">{name}</h3>}
       {<h5 className='product-details product-description'>{descrip}</h5>}
       {<h3 className="product-details product-price">{'$' + price}</h3>}
       <button onClick={addToCart} className="btn btn-secondary product-details addBtn">

@@ -42,6 +42,10 @@ input::-webkit-inner-spin-button {
     margin: 0;
 }
 
+.trash-price {
+    margin: 0;
+}
+
 .delete-btn {
     transform: scale(1.5);
     color: red;
@@ -56,7 +60,9 @@ input::-webkit-inner-spin-button {
 
 .item-price {
     position: relative;
-    top: 45%;
+    top: 40%;
+   
+    float: right;
     
 }
 

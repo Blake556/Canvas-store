@@ -40,7 +40,7 @@ function Cart(props) {
                   width="150px"
                 />
               </div>
-              <div className="col col-xl-8  col-lg-8 col-md-7 col-sm-6 col-7  item-details-qunaity">
+              <div className="col col-xl-7  col-lg-7 col-md-6 col-sm-6 col-6  item-details-qunaity">
                 <div className="d-flex align-items-start flex-column">
                   <h4 className="">{item.name}</h4>
                   <h6>Canvas</h6>
@@ -61,15 +61,18 @@ function Cart(props) {
                   </button>
                 </div>
               </div>
-              <div className="col col-xl-1 col-lg-1 col-md-1 col-sm-2 col-1 ">
-                <DeleteForeverIcon
-                  onClick={() => props.handleDelteItem(item)}
-                  className="delete-btn"
-                />
-
-                <h4 className=" item-price">
-                  {(total = "$" + item.price * item.qty)}
-                </h4>
+              <div className="col col-xl-2 col-lg-2 col-md-2 col-sm-2 col-2 trash-price">
+                <div>
+                  <DeleteForeverIcon
+                    onClick={() => props.handleDelteItem(item)}
+                    className="delete-btn"
+                  />
+                </div>
+                <div className=" item-price">
+                  <h4 >
+                    {(total = "$" + item.price * item.qty)}
+                  </h4>
+                </div>
               </div>
             </div>
           );

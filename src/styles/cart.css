@@ -1,5 +1,6 @@
 .cart-body {
     min-height: 100vh;
+
     display: flex;
     flex-direction: column;
 }
@@ -10,7 +11,7 @@
 
 .cart-container {
     margin: 40px auto 0;
-    min-width: 500px;
+    /* min-width: 500px; */
 }
 
 .cart-item-container {
@@ -73,4 +74,81 @@ input::-webkit-inner-spin-button {
 p.quanity-option  {
     padding-left: 2.5%;
     color: black;
+}
+
+
+@media screen and (max-width: 400px) {
+    .cart-container {
+        margin: 0px auto 0;
+        max-width: 375px;
+    }
+
+    .cart-item-img {
+       width: 100px;
+      }
+
+      .item-details-qunaity {
+        padding-bottom: 60px;
+        
+        
+    }
+
+      .name-item, h4, h6 {
+        font-size: 1rem;
+      }
+
+      .btn-row  {
+        height: 30px;
+        width: auto;
+      }
+
+      /* .item-details-qunaity {
+        padding-bottom: 60px;
+        
+    }
+     */
+    .quanity-btn {
+        width: 30px;
+        height: 30px;
+        padding: 0 10px
+    }
+    
+    .quanity-option{
+        width: 25px;
+        font-size: 1.5rem;
+       
+        /* position: relative;
+        left: 10px; */
+    }
+
+    .trash-price {
+        margin: 0;
+    }
+    
+    .delete-btn {
+        transform: scale(1.2);
+        color: red;
+        position: relative;
+        left: 40%; 
+        top: 5% 
+    }
+    
+    .finalize-container {
+        margin: 20px 0 125px 0;
+    }
+    
+    .item-price h4  {
+        font-size: 1.3rem;
+    }
+    
+    .purchase-button {
+        margin-top: 50px;
+        width: auto;
+    }
+    
+    p.quanity-option  {
+        padding-left: 2.5%;
+        color: black;
+    }
+    
 }

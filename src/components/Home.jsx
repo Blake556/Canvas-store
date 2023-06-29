@@ -28,7 +28,7 @@ function Home(props) {
 
     return (
         <div className='body'>
-            <h1 className='header'>BK canvases</h1>
+            <h1 className='header'>Canvases store</h1>
                 <div className='main-content'>
                 { data.map((item, index) => {
                     return (

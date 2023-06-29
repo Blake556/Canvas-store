@@ -13,3 +13,14 @@ p {
     display: flex;
     align-items: center;
 }
+
+@media screen and (max-width: 400px) {
+    .footer {
+      height: 65px;
+  }
+  
+  p, a {
+    font-size: 1.3rem;
+  }
+   
+  }

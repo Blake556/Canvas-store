@@ -41,7 +41,7 @@ function Product(props) {
       {<h5 className='product-details product-description'>{descrip}</h5>}
       {<h3 className="product-details product-price">{'$' + price}</h3>}
       <button onClick={addToCart} className="btn btn-secondary product-details addBtn">
-        Buy
+        Buy 
       </button>
     </div>
   );

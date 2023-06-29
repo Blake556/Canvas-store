@@ -41,11 +41,11 @@ function Cart(props) {
                 />
               </div>
               <div className="col col-xl-7  col-lg-7 col-md-6 col-sm-6 col-6  item-details-qunaity">
-                <div className="d-flex align-items-start flex-column">
+                <div className="d-flex align-items-start flex-column name-item">
                   <h4 className="">{item.name}</h4>
                   <h6>Canvas</h6>
                 </div>
-                <div className="d-flex">
+                <div className="btn-row d-flex">
                   <button
                     onClick={() => props.handleDecrease(item)}
                     className="btn btn-danger quanity-btn"

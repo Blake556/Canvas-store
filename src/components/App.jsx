@@ -5,7 +5,7 @@ import Footer from "./Footer";
 import Home from "./Home";
 import Cart from "./Cart";
 import data from "../productData";
-import { BrowserRouter as Router, Route, Switch, Link } from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch, Redirect } from "react-router-dom";
 import { useState } from "react";
 
 function App() {
@@ -68,28 +68,32 @@ function App() {
 
   return (
     <Router>
-      <div className="App">
-        <Navbar />
+    <div className="App">
+      <Navbar />
 
-        <Switch>
-          <Route exact path="/Home">
-            <Home data={data} onAdd={handleCartClick} />
-          </Route>
+      <Switch>
+        <Route exact path="/">
+          <Redirect to="/Home" />
+        </Route>
 
-          <Route exact path="/Cart">
-            <Cart
-              cartItems={cartItems}
-              handleDecrease={handleDecrease}
-              handleIncrease={handleIncrease}
-              handleDelteItem={handleDelteItem}
-              purchaseItemsBtn={purchaseItemsBtn}
-            />
-          </Route>
-        </Switch>
+        <Route exact path="/Home">
+          <Home data={data} onAdd={handleCartClick} />
+        </Route>
 
-        <Footer />
-      </div>
-    </Router>
+        <Route exact path="/Cart">
+          <Cart
+            cartItems={cartItems}
+            handleDecrease={handleDecrease}
+            handleIncrease={handleIncrease}
+            handleDelteItem={handleDelteItem}
+            purchaseItemsBtn={purchaseItemsBtn}
+          />
+        </Route>
+      </Switch>
+
+      <Footer />
+    </div>
+  </Router>
   );
 }
 

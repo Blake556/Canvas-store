@@ -4,3 +4,22 @@
     display: flex;
     flex-direction: column;
 } 
+
+.header {
+    padding-top: 40px;
+    padding-bottom: 40px;
+ 
+}
+
+.main-content {
+     
+    margin-bottom: 50px;
+}
+
+@media screen and (max-width: 400px) {
+    .main-content {
+     
+        
+        margin-bottom: 50px;
+    }
+  }

@@ -6,7 +6,10 @@
 }
 
 .cart-header {
-    margin: 30px 0 60px 0;
+    margin: 50px 0 60px 0;
+    font-family: 'Caveat';
+    font-weight: 800;
+    font-size: 3.5rem;
 }
 
 .cart-container {
@@ -32,9 +35,10 @@
     padding: 0 15px
 }
 
-.quanity-option{
+p.quanity-option {
     width: 45px;
-    margin: 0 5px
+    margin: 0 5px;
+    padding-left: 0px;
 }
 
 input::-webkit-outer-spin-button,

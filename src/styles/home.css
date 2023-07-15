@@ -1,4 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Caveat&family=Pacifico&family=Permanent+Marker&family=Rock+3D&display=swap');
+
+
 .body {
+    font-family: sans-serif;
    
     min-height: 100vh;
     display: flex;
@@ -8,6 +12,9 @@
 .header {
     padding-top: 40px;
     padding-bottom: 40px;
+    font-family: 'Caveat';
+    font-weight: 800;
+    font-size: 3.5rem;
  
 }
 

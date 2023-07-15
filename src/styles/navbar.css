@@ -12,7 +12,8 @@
 }
 
 
-p, a {
+.nav-bar p, a {
+  color: azure;
   font-size: 1.5rem;
   text-decoration: none;
   margin: 0;

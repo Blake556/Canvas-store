@@ -1,17 +1,18 @@
 
 .footer {
     background-color: black;
-    height: 75px;
+    height: 55px;
     width: 100%;
     display: flex;
     justify-content: center;
-    align-items: center; 
+    align-items: center;
 }
 
-p {
-    color: azure;
-    display: flex;
-    align-items: center;
+.footer p {
+  font-size: 1.3rem;
+  color: grey;
+  padding-top: 15px;
+   
 }
 
 @media screen and (max-width: 400px) {

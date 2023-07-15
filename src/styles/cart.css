@@ -38,7 +38,7 @@
 p.quanity-option {
     width: 45px;
     margin: 0 5px;
-    padding-left: 0px;
+   font-size: 1.4rem;
 }
 
 input::-webkit-outer-spin-button,
@@ -75,10 +75,6 @@ input::-webkit-inner-spin-button {
     margin-top: 50px;
 }
 
-p.quanity-option  {
-    padding-left: 2.5%;
-    color: black;
-}
 
 
 @media screen and (max-width: 400px) {

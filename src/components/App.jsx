@@ -5,7 +5,7 @@ import Footer from "./Footer";
 import Home from "./Home";
 import Cart from "./Cart";
 import data from "../productData";
-import { BrowserRouter as Router, Route, Routes, Navigate, Switch, Redirect } from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch, Redirect } from "react-router-dom";
 import { useState } from "react";
 
 function App() {
@@ -67,29 +67,33 @@ function App() {
   }
 
   return (
-  
-   <Router>
-   <div className="App">
+    <Router>
+    <div className="App">
       <Navbar />
-      <Routes>
-        <Route path="/" element={ <Navigate to="/Home"/> } />
-        <Route path="Home" element={ <Home data={data} onAdd={handleCartClick} /> } />
-        <Route path="Cart" element={<Cart cartItems={cartItems} handleDecrease={handleDecrease}
-          handleIncrease={handleIncrease} handleDelteItem={handleDelteItem} purchaseItemsBtn={purchaseItemsBtn} /> } />
-      </Routes>
+
+      <Switch>
+        <Route exact path="/">
+          <Redirect to="/Home" />
+        </Route>
+
+        <Route exact path="/Home">
+          <Home data={data} onAdd={handleCartClick} />
+        </Route>
+
+        <Route exact path="/Cart">
+          <Cart
+            cartItems={cartItems}
+            handleDecrease={handleDecrease}
+            handleIncrease={handleIncrease}
+            handleDelteItem={handleDelteItem}
+            purchaseItemsBtn={purchaseItemsBtn}
+          />
+        </Route>
+      </Switch>
+
       <Footer />
     </div>
-   </Router>
-  
-
-
-
-
-
-
-
-
-
+  </Router>
   );
 }
 

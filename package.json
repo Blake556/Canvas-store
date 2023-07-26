@@ -1,5 +1,5 @@
 {
-  "homepage": "https://Blake556.github.io/Canvas-store/Home",
+  "homepage": "https://Blake556.github.io/Canvas-store/",
   "name": "react-store",
   "version": "0.1.0",
   "private": true,
@@ -16,8 +16,8 @@
     "node": "^19.8.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-router-dom": "^5.3.4",
-    "react-scripts": "^2.1.3",
+    "react-router-dom": "^6.14.1",
+    "react-scripts": "^5.0.1",
     "web-vitals": "^2.1.4"
   },
   "scripts": {

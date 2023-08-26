@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/Canvas-store/static/css/main.ec8caa6f.css",
+    "main.js": "/Canvas-store/static/js/main.69db7547.js",
+    "static/media/Terminator.png": "/Canvas-store/static/media/Terminator.8d67290cb16c94c8d161.png",
+    "static/media/john-whick.png": "/Canvas-store/static/media/john-whick.6e93171a4a07283bc99d.png",
+    "static/media/Rick.png": "/Canvas-store/static/media/Rick.ede8e48c51b5df443fdd.png",
+    "static/media/rambo.png": "/Canvas-store/static/media/rambo.6604de68ccfb2c3daf94.png",
+    "static/media/scarface.png": "/Canvas-store/static/media/scarface.7153c21792c9ea8cef13.png",
+    "static/media/THE-SHIELD.png": "/Canvas-store/static/media/THE-SHIELD.a346fbd985462138eed3.png",
+    "static/media/Arnold-Schwarzenegger.png": "/Canvas-store/static/media/Arnold-Schwarzenegger.8e57718d0829b4ed0b25.png",
+    "static/media/walter-white.png": "/Canvas-store/static/media/walter-white.3645f3a96b77f1622381.png",
+    "static/media/frank-castle.png": "/Canvas-store/static/media/frank-castle.611c82b1cc7a8b3b3199.png",
+    "static/media/gran-torino.png": "/Canvas-store/static/media/gran-torino.c409c3e7cdaa6759c917.png",
+    "static/media/Ruth-Ozark.png": "/Canvas-store/static/media/Ruth-Ozark.7430b312ebf2071166a9.png",
+    "static/media/pulp-fiction.png": "/Canvas-store/static/media/pulp-fiction.419f089019e49b12b064.png",
+    "index.html": "/Canvas-store/index.html",
+    "main.ec8caa6f.css.map": "/Canvas-store/static/css/main.ec8caa6f.css.map",
+    "main.69db7547.js.map": "/Canvas-store/static/js/main.69db7547.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.ec8caa6f.css",
+    "static/js/main.69db7547.js"
+  ]
+}

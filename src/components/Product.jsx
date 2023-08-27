@@ -7,7 +7,11 @@ function Product(props) {
   // Add state to keep track of hover state
   const [isHovered, setIsHovered] = useState(false);
 
+  const [BtnClicked, setBtnClicked] = useState(false);
+
   function addToCart() {
+    setBtnClicked(true);
+
     props.continueToPass({
       id: id,
       key: id,
@@ -38,12 +42,17 @@ function Product(props) {
       <h3 className="product-details product-name">{name}</h3>
       <h5 className="product-details product-description">{descrip}</h5>
       <h3 className="product-details product-price">{"$" + price}</h3>
-      <button
-        onClick={addToCart}
-        className="btn btn-secondary product-details addBtn"
-      >
-        Buy
-      </button>
+
+      {BtnClicked ? (
+        <span className="add-msg">Added to Cart</span>
+      ) : (
+        <button
+          onClick={addToCart}
+          className="btn btn-secondary product-details addBtn"
+        >
+          Buy
+        </button>
+      )}
     </div>
   );
 }

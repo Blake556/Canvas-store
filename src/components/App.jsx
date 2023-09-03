@@ -5,7 +5,12 @@ import Footer from "./Footer";
 import Home from "./Home";
 import Cart from "./Cart";
 import data from "../productData";
-import { BrowserRouter as Router, Route, Routes} from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Route,
+  Navigate,
+  Routes,
+} from "react-router-dom";
 import { useState } from "react";
 
 function App() {
@@ -68,45 +73,31 @@ function App() {
 
   return (
     <Router>
-    <div className="App">
+      <div className="App">
         <Navbar />
         <Routes>
-        <Route path="/" element={<Home data={data} onAdd={handleCartClick} />} />
-<Route path="/Cart" element={<Cart cartItems={cartItems} handleDecrease={handleDecrease} handleIncrease={handleIncrease} handleDelteItem={handleDelteItem} purchaseItemsBtn={purchaseItemsBtn} />} />
+        <Route path="/" element={<Navigate to="/Home" />} />
+          <Route
+            path="/Home"
+            element={<Home data={data} onAdd={handleCartClick} />}
+          />
+          <Route
+            path="/Cart"
+            element={
+              <Cart
+                cartItems={cartItems}
+                handleDecrease={handleDecrease}
+                handleIncrease={handleIncrease}
+                handleDelteItem={handleDelteItem}
+                purchaseItemsBtn={purchaseItemsBtn}
+              />
+            }
+          />
         </Routes>
         <Footer />
       </div>
-   </Router>
+    </Router>
   );
 }
 
 export default App;
-
-// function handleCartClick(addItem) {
-//   const productExist = cartItems.find(item => item.id === addItem.id )
-//   if (productExist) {
-//     // cartItems.push(addItem)
-//     // setCartItems([...cartItems])
-
-//     setCartItems(cartItems.map(item =>
-//        item.id === addItem.id ? {...productExist, qty: productExist.qty + 1 } : item))
-//   } else {
-//     setCartItems([...cartItems, {...addItem, qty: 1 }])
-//   }
-//    //console.log(cartItems)
-// }
-
-// function handleCartClick(addItem, product) {
-//   // const productExist = cartItems.find(item => item.id === product.id)
-//   // if(productExist) {
-
-//   //   setCartItems(cartItems.map(item => item.id === product.id ? {...productExist, quanity : productExist.quanity + 1}: item))
-//   // } else {
-
-//   //   setCartItems([...cartItems, {...product, quanity: 1}])
-//   // }
-
-//    cartItems.push(addItem)
-//    setCartItems([...cartItems])
-//    console.log(cartItems)
-// }

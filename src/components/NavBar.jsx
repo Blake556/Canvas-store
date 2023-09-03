@@ -6,7 +6,7 @@ function NavBar() {
 
     return(
         <div className="nav-bar d-flex align-items-center">
-            <Link to="/"> <p>Home</p> </Link>
+            <Link to="/Home"> <p>Home</p> </Link>
             <Link to="/Cart"><p>Cart</p> </Link>
         </div>
     )
